@@ -1,0 +1,9 @@
+# Only the published website belongs in this repository, and anything pushed to it is public.
+# Everything else in this folder stays on this computer: original photos (some contain GPS
+# location), design previews and snapshots, helper tools, and the other CVs.
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/assets/
+!/AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf

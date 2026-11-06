@@ -1,0 +1,190 @@
+:root {
+  --ink: #10233d;
+  --text: #1d2a38;
+  --quiet: #54606d;
+  --magenta: #b4107f;
+  --rule: #10233d;
+  --hair: #cdd5dc;
+  --sand: #e9dcbf;
+  --edge: 48px;
+  --awards-column: 45%;
+  --page-limit: 1760px;
+  --head: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, serif;
+
+  /* Colours of the awards column. */
+  --aw-bg: #10233d;
+  --aw-title: #fff;
+  --aw-text: #dce5ec;
+  --aw-quiet: #aebdca;
+  --aw-link: #fff;
+  --aw-rule: rgba(255, 255, 255, .28);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fff; color: var(--text); font: 400 18px/1.5 var(--body); }
+a { color: var(--magenta); text-decoration-thickness: 1px; text-underline-offset: 2.5px; }
+a:hover { color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--magenta); outline-offset: 2px; }
+p { margin: 0; }
+figure { margin: 0; }
+h2 { font: 600 32px/1.05 var(--head); color: var(--ink); margin: 0; letter-spacing: -.005em; }
+
+/* Section links stay in view while scrolling, split to match the two columns below. */
+.top {
+  position: sticky; top: 0; z-index: 5;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--awards-column));
+  max-width: var(--page-limit); margin: 0 auto;
+  background: #fff; border-bottom: 1px solid var(--hair);
+  font: 500 16px/1.3 var(--head);
+}
+.top a { text-decoration: none; }
+.top-left { display: flex; flex-wrap: wrap; gap: 4px 18px; padding: 12px 40px 12px var(--edge); }
+.top-left a { color: var(--ink); }
+.top-left a:hover { color: var(--magenta); }
+.top-right { padding: 12px var(--edge) 12px 32px; background: var(--aw-bg); font-weight: 600; }
+.top-right a { color: var(--aw-title); }
+.top-right a:hover { color: var(--aw-text); text-decoration: underline; }
+section, footer { scroll-margin-top: 44px; }
+.pubs li { scroll-margin-top: 64px; }
+
+/* Two columns: the person on the left, the awards on the right.
+   In the source the awards sit between the two left blocks, so on a phone they follow the introduction. */
+.layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--awards-column)); grid-template-rows: auto 1fr;
+  max-width: var(--page-limit); margin: 0 auto;
+}
+.intro { grid-column: 1; grid-row: 1; padding: 34px 44px 30px var(--edge); }
+.record { grid-column: 1; grid-row: 2; padding: 0 44px 40px var(--edge); }
+.awards { grid-column: 2; grid-row: 1 / 3; display: flex; flex-direction: column; background: var(--aw-bg); color: var(--aw-text); }
+
+/* The left column runs longer. Sticking to the bottom edge lets the awards scroll normally until the
+   last one is in view, then hold there, instead of leaving empty navy beside the rest of the record. */
+.awards-inner { position: sticky; bottom: 0; margin-top: auto; padding: 28px var(--edge) 22px 32px; }
+
+/* Introduction */
+.intro-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr; column-gap: 24px; margin-bottom: 20px; }
+h1 { grid-column: 1; grid-row: 1; font: 600 clamp(52px, 6.3vw, 104px)/.95 var(--head); color: var(--ink); margin: 0 0 16px; letter-spacing: -.012em; }
+.lede { grid-column: 1; grid-row: 2; font: 500 clamp(22px, 2vw, 32px)/1.18 var(--head); color: var(--ink); }
+.portrait { grid-column: 2; grid-row: 1 / 3; display: block; width: clamp(120px, 17vw, 280px); height: auto; }
+.intro-text { font-size: 17.5px; margin-bottom: 14px; }
+.interests { font-size: 16px; line-height: 1.44; color: var(--quiet); margin-bottom: 16px; }
+.interests b { font-weight: 600; color: var(--text); }
+.links { font: 500 16px/1.5 var(--head); display: flex; flex-wrap: wrap; gap: 2px 16px; }
+
+/* Awards: one numbered entry per award, so the count can be read straight down the column. */
+.awards-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; margin-bottom: 16px; }
+.awards h2 { color: var(--aw-title); font-size: clamp(36px, 3.2vw, 46px); }
+.note { font-size: 15.5px; color: var(--aw-quiet); }
+.award-list { list-style: none; margin: 0; padding: 0; counter-reset: award; }
+.award {
+  counter-increment: award;
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: baseline;
+  padding: 14px 0 26px; border-top: 1px solid var(--aw-rule);
+}
+.award::before { content: counter(award); grid-column: 1; font: 600 27px/1.12 var(--head); color: var(--aw-title); }
+.what { grid-column: 2; font: 600 27px/1.12 var(--head); color: var(--aw-title); margin: 0; padding-right: 14px; }
+.yr { grid-column: 3; font: 500 18px/1.2 var(--head); color: var(--aw-quiet); white-space: nowrap; }
+.body { grid-column: 2 / 4; }
+.text-only { padding-bottom: 14px; }
+.zoom { display: block; cursor: zoom-in; margin-top: 11px; }
+.zoom img { display: block; width: 100%; height: auto; outline: 1px solid rgba(255, 255, 255, .16); outline-offset: -1px; }
+.photo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 10px; }
+.detail { font-size: 16.5px; line-height: 1.42; margin-top: 10px; }
+.text-only .detail { margin-top: 3px; }
+.by { font-size: 15.5px; line-height: 1.35; color: var(--aw-quiet); margin-top: 3px; }
+blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color: var(--aw-title); }
+.go { font: 500 16px/1.4 var(--head); margin-top: 9px; display: flex; flex-wrap: wrap; gap: 2px 16px; }
+.awards a { color: var(--aw-link); }
+.awards a:hover { color: var(--aw-text); }
+.awards a:focus-visible { outline-color: var(--aw-title); }
+.also figcaption { font-size: 15.5px; line-height: 1.38; color: var(--aw-quiet); margin-top: 7px; }
+
+/* The record on the left */
+.record section { padding: 26px 0 30px; border-top: 1px solid var(--rule); }
+.record h2 { margin-bottom: 14px; }
+.h2-note { font-size: 15.5px; line-height: 1.4; color: var(--quiet); margin: -8px 0 16px; }
+
+.entry { display: grid; grid-template-columns: 118px minmax(0, 1fr); column-gap: 20px; padding: 12px 0; border-top: 1px solid var(--hair); }
+.record h2 + .entry { border-top: 0; padding-top: 0; }
+.entry .when { font: 500 16px/1.4 var(--head); color: var(--quiet); }
+.entry h3 { font: 600 23px/1.16 var(--head); color: var(--ink); margin: 0; }
+.entry .org { font-size: 16px; line-height: 1.38; color: var(--quiet); margin-top: 2px; }
+.entry p:not(.when):not(.org) { font-size: 17px; line-height: 1.45; }
+.entry .org + p { margin-top: 7px; }
+.entry div > p + p:not(.org) { margin-top: 7px; }
+.entry b { font-weight: 600; color: var(--ink); }
+
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs > li { display: grid; grid-template-columns: 44px minmax(0, 1fr); padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--hair); }
+.pubs > li:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.pubs .n { font: 600 19px/1.32 var(--head); color: var(--ink); }
+.pubs h3 { font: 600 23px/1.16 var(--head); color: var(--ink); margin: 0 0 5px; }
+.pubs h3 a { color: inherit; text-decoration: none; background: linear-gradient(var(--hair), var(--hair)) 0 100% / 100% 1px no-repeat; }
+.pubs h3 a:hover { color: var(--magenta); }
+.pubs .cite { font-size: 15.5px; line-height: 1.38; margin-bottom: 6px; color: var(--quiet); }
+.pubs .cite b { font-weight: 600; color: var(--text); }
+.pubs .plain { margin-bottom: 6px; font-size: 17px; line-height: 1.45; }
+.pubs .meta { font-size: 15.5px; color: var(--quiet); }
+.pubs .win { color: var(--magenta); font-weight: 600; }
+.pubs li:target { background: #fbf1f8; box-shadow: -12px 0 0 #fbf1f8, 12px 0 0 #fbf1f8; }
+
+/* The graduated border printed around aeronautical charts. */
+.neatline {
+  height: 7px; border: 1px solid var(--ink);
+  background: repeating-linear-gradient(90deg, var(--ink) 0 48px, #fff 48px 96px);
+}
+
+footer { padding: 34px var(--edge) 56px; background: var(--sand); color: #3c3320; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 32px; }
+footer h2 { color: #2a2416; }
+footer p { margin-bottom: 4px; }
+footer a { color: #2a2416; }
+footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline-block; margin-bottom: 10px; }
+.updated { font-size: 15px; margin-top: 12px; }
+
+@media (max-width: 980px) {
+  :root { --edge: 20px; }
+  body { font-size: 17.5px; }
+  /* One flowing row of links, with Awards first because that is the order of the page here. */
+  .top { position: static; display: flex; flex-wrap: wrap; gap: 2px 14px; padding: 10px var(--edge); }
+  .top-left, .top-right { display: contents; }
+  .top-right a { order: -1; color: var(--ink); font-weight: 500; }
+  .top-right a:hover { color: var(--magenta); text-decoration: none; }
+
+  .layout { display: block; }
+  .intro { padding: 22px var(--edge) 26px; }
+  .awards { display: block; }
+  .awards-inner { position: static; padding: 24px var(--edge) 12px; }
+  .record { padding: 0 var(--edge) 28px; }
+  .record section:first-child { border-top: 0; }
+  .award { grid-template-columns: 28px minmax(0, 1fr) auto; }
+  .what, .award::before { font-size: 25px; }
+  .body { grid-column: 1 / -1; }
+  .text-only .body { grid-column: 2 / -1; }
+  footer { grid-template-columns: minmax(0, 1fr); row-gap: 14px; padding-top: 30px; padding-bottom: 40px; }
+}
+
+@media (max-width: 560px) {
+  /* The photo sits beside the name only, so the tagline gets the full width below. */
+  .portrait { grid-row: 1; }
+  .lede { grid-column: 1 / -1; margin-top: 2px; }
+  .entry { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
+  .pubs > li { grid-template-columns: 34px minmax(0, 1fr); }
+  .pubs h3 { font-size: 22px; }
+}
+
+@media print {
+  /* Browsers drop background colours when printing, so the white text on navy needs to turn dark on paper. */
+  :root { --aw-bg: #fff; --aw-title: #10233d; --aw-text: #1d2a38; --aw-quiet: #54606d; --aw-link: #10233d; --aw-rule: #10233d; }
+  .top, .neatline, .note { display: none; }
+  .layout, .awards { display: block; }
+  .awards-inner { position: static; }
+  .zoom img { max-width: 4.6in; }
+  .photo-pair { max-width: 4.6in; }
+  .awards { break-before: page; }
+  .entry, .pubs > li, .zoom, .also { break-inside: avoid; }
+  .award:not(:first-child) { break-inside: avoid; }
+  h2, .awards-head, .what, .yr { break-after: avoid; }
+  a { color: inherit; }
+}
