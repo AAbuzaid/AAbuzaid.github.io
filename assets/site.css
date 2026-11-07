@@ -74,9 +74,7 @@ h1 { grid-column: 1; grid-row: 1; font: 600 clamp(52px, 6.3vw, 104px)/.95 var(--
 .links { font: 500 16px/1.5 var(--head); display: flex; flex-wrap: wrap; gap: 2px 16px; }
 
 /* Awards: one numbered entry per award, so the count can be read straight down the column. */
-.awards-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; margin-bottom: 16px; }
-.awards h2 { color: var(--aw-title); font-size: clamp(36px, 3.2vw, 46px); }
-.note { font-size: 15.5px; color: var(--aw-quiet); }
+.awards h2 { color: var(--aw-title); font-size: clamp(36px, 3.2vw, 46px); margin-bottom: 16px; }
 .award-list { list-style: none; margin: 0; padding: 0; counter-reset: award; }
 .award {
   counter-increment: award;
@@ -88,8 +86,8 @@ h1 { grid-column: 1; grid-row: 1; font: 600 clamp(52px, 6.3vw, 104px)/.95 var(--
 .yr { grid-column: 3; font: 500 18px/1.2 var(--head); color: var(--aw-quiet); white-space: nowrap; }
 .body { grid-column: 2 / 4; }
 .text-only { padding-bottom: 14px; }
-.zoom { display: block; cursor: zoom-in; margin-top: 11px; }
-.zoom img { display: block; width: 100%; height: auto; outline: 1px solid rgba(255, 255, 255, .16); outline-offset: -1px; }
+.photo { margin-top: 11px; }
+.photo img { display: block; width: 100%; height: auto; outline: 1px solid rgba(255, 255, 255, .16); outline-offset: -1px; }
 .photo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 10px; }
 .detail { font-size: 16.5px; line-height: 1.42; margin-top: 10px; }
 .text-only .detail { margin-top: 3px; }
@@ -177,14 +175,14 @@ footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline
 @media print {
   /* Browsers drop background colours when printing, so the white text on navy needs to turn dark on paper. */
   :root { --aw-bg: #fff; --aw-title: #10233d; --aw-text: #1d2a38; --aw-quiet: #54606d; --aw-link: #10233d; --aw-rule: #10233d; }
-  .top, .neatline, .note { display: none; }
+  .top, .neatline { display: none; }
   .layout, .awards { display: block; }
   .awards-inner { position: static; }
-  .zoom img { max-width: 4.6in; }
+  .photo img { max-width: 4.6in; }
   .photo-pair { max-width: 4.6in; }
   .awards { break-before: page; }
-  .entry, .pubs > li, .zoom, .also { break-inside: avoid; }
+  .entry, .pubs > li, .photo, .also { break-inside: avoid; }
   .award:not(:first-child) { break-inside: avoid; }
-  h2, .awards-head, .what, .yr { break-after: avoid; }
+  h2, .what, .yr { break-after: avoid; }
   a { color: inherit; }
 }
