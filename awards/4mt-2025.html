@@ -76,6 +76,32 @@
     <h2>The talk</h2>
     <p>The Four Minute Thesis asks PhD students to explain their research to a non-specialist audience in four minutes. My talk covered my doctoral work on networks for air taxis and drones in cities: a heterogeneous network in which aerial platforms work alongside terrestrial base stations to serve aircraft along their routes.</p>
 
+    <h2>The paper</h2>
+    <p>The network in the talk is analyzed in <a href="../#pub-2">Aerial-Terrestrial Heterogeneous Networks for Urban Air Mobility: A Performance Analysis</a>, published in the <i>IEEE Open Journal of Vehicular Technology</i> (2025).</p>
+    <p>The paper looks at air taxis flying along fixed air corridors above a city, served by two kinds of base station: aerial platforms flying above the corridors, and terrestrial base stations with their antennas tilted upwards. It calculates how likely an aircraft is to connect to each kind, and how likely its link is to work in both directions, uplink and downlink, and checks the math against simulation.</p>
+    <figure>
+      <img src="../assets/img/hetnet-system-1000.jpg"
+           srcset="../assets/img/hetnet-system-1000.jpg 1000w, ../assets/img/hetnet-system-1600.jpg 1600w"
+           sizes="(max-width: 980px) 100vw, 700px"
+           width="1600" height="521" loading="lazy"
+           alt="Diagram in three panels. Air taxis fly in an air corridor between airship-shaped aerial base stations above and terrestrial base stations among buildings below. The first panel marks the distances from an air taxi to the nearest aerial base station and to the nearest terrestrial base stations with and without line of sight. The second shows uplink signals and interference, the third downlink signals and interference.">
+      <figcaption>The network. Left: the distances from an air taxi to the nearest aerial base station and to the nearest terrestrial base stations, with and without line of sight. Middle: the uplink, where other aircraft interfere at the base stations. Right: the downlink, where other base stations interfere at the aircraft.</figcaption>
+    </figure>
+    <p>Which kind of base station an aircraft connects to depends on its altitude and on how built-up the city is. Low down, buildings block most links to the ground, so aircraft connect mostly to aerial base stations. As they climb they can reach terrestrial base stations in line of sight, but higher still the distance to the ground grows and they shift back toward aerial ones. In high-rise cities they favor aerial base stations at every altitude.</p>
+    <figure class="fig-narrow">
+      <img src="../assets/img/hetnet-association-860.jpg" width="860" height="684" loading="lazy"
+           alt="Plot of association probability against the altitude of the air taxis, from 50 to 500 m, for urban, dense urban, and high-rise urban areas. The probability of connecting to an aerial base station is highest at low altitude, dips, and rises again; in high-rise areas it stays above 0.7. Simulation points lie on the analytical curves.">
+      <figcaption>Probability that an aircraft connects to an aerial base station (solid lines) or to a terrestrial base station in line of sight (dashed), against its altitude, in urban, dense urban, and high-rise cities. Stars are simulations.</figcaption>
+    </figure>
+    <p>The usual rule for choosing a base station, by the strongest average signal, does not always give the best coverage, because it ignores interference: the uplink and the downlink work best with different settings, and joint coverage is best at a compromise between them. Altitude matters as well. When the corridor sits as far below the aerial base stations as it sits above the terrestrial ones, joint coverage is highest at a separation of about 300 m.</p>
+    <figure class="fig-narrow">
+      <img src="../assets/img/hetnet-altitude-860.jpg" width="860" height="685" loading="lazy"
+           alt="Plot of coverage probability against the vertical distance from the corridor to both kinds of base station, from 50 to 1000 m. Joint coverage rises to about 0.67 near 300 m and then falls; uplink and downlink coverage are shown separately, with simulation points.">
+      <figcaption>Coverage against the vertical distance between the corridor and both kinds of base station. The dark line is joint uplink and downlink coverage, highest at about 300 m; the light blue and green lines are uplink and downlink alone. Stars are simulations.</figcaption>
+    </figure>
+    <p>For network designers, the results suggest placing aerial base stations close to the corridors, choosing the corridor altitude so that an aircraft sees at most one terrestrial base station in line of sight, which limits uplink interference, and setting the uplink and downlink thresholds with care.</p>
+    <p class="credit">Figures from the journal article, published open access under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.</p>
+
     <h2>The competition</h2>
     <p>Forty PhD candidates entered. In the first round, an expert panel judged pre-recorded presentations anonymously, and the top 15 went on to present live at IEEE ICC 2025 in Montreal. Judging covered comprehension, clarity of content, engagement, and presentation.</p>
     <p>The winners were announced the next day at the meeting of the IEEE ComSoc Board of Governors, where they were recognized by the ComSoc president, Prof. Robert Schober. Two other students from my lab also placed: Salah Abdeljabar won second place, and Zhengying Lou also took third.</p>
