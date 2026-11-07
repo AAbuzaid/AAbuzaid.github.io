@@ -29,6 +29,7 @@ a:hover { color: var(--ink); }
 a:focus-visible { outline: 2px solid var(--magenta); outline-offset: 2px; }
 p { margin: 0; }
 figure { margin: 0; }
+img { max-width: 100%; height: auto; } /* No image can grow wider than its column, whatever class it has. */
 h2 { font: 600 32px/1.05 var(--head); color: var(--ink); margin: 0; letter-spacing: -.005em; }
 
 /* Section links stay in view while scrolling, split to match the two columns below. */
