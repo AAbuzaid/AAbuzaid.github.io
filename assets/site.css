@@ -173,6 +173,14 @@ footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline
   .pubs h3 { font-size: 22px; }
 }
 
+@media (max-width: 359px) {
+  /* On the narrowest phones the name, the photo and the space between them shrink a little,
+     so the photo never covers the end of "Abdullah". */
+  .intro-head { column-gap: 16px; }
+  h1 { font-size: 14vw; }
+  .portrait { width: 30vw; }
+}
+
 @media print {
   /* Browsers drop background colours when printing, so the white text on navy needs to turn dark on paper. */
   :root { --aw-bg: #fff; --aw-title: #10233d; --aw-text: #1d2a38; --aw-quiet: #54606d; --aw-link: #10233d; --aw-rule: #10233d; }
