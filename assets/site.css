@@ -128,6 +128,39 @@ blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color
 .pubs .win { color: var(--magenta); font-weight: 600; }
 .pubs li:target { background: #fbf1f8; box-shadow: -12px 0 0 #fbf1f8, 12px 0 0 #fbf1f8; }
 
+/* Award pages: one page per award, with the full story behind the entry on the main page. */
+.page-top {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px;
+  max-width: var(--page-limit); margin: 0 auto; padding: 12px var(--edge);
+  font: 500 16px/1.3 var(--head);
+}
+.page-top a { color: var(--ink); text-decoration: none; }
+.page-top a:hover { color: var(--magenta); }
+.page-top .home { font-weight: 600; }
+.award-head { background: var(--aw-bg); }
+.award-head > div { max-width: var(--page-limit); margin: 0 auto; padding: 38px var(--edge) 34px; }
+.award-head h1 { font: 600 clamp(36px, 4.2vw, 60px)/1.03 var(--head); color: var(--aw-title); margin: 0; max-width: 22em; letter-spacing: -.01em; }
+.award-head .when { font: 500 20px/1.3 var(--head); color: var(--aw-quiet); margin-top: 12px; }
+.award-page {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 56px;
+  max-width: var(--page-limit); margin: 0 auto; padding: 36px var(--edge) 60px;
+}
+.award-page aside { grid-column: 2; grid-row: 1; }
+.story { grid-column: 1; grid-row: 1; }
+.story h2 { font-size: 30px; margin: 34px 0 12px; }
+.story > :first-child { margin-top: 0; }
+.story p { max-width: 40em; }
+.story p + p { margin-top: 12px; }
+.story blockquote { color: var(--ink); font-size: 22px; max-width: 32em; margin: 0 0 6px; }
+.story .quote-by { font-size: 16px; color: var(--quiet); }
+.story .photo { max-width: 40em; margin-top: 16px; }
+.story .photo + p { margin-top: 12px; }
+.facts { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 18px; margin: 20px 0 0; border-bottom: 1px solid var(--hair); }
+.facts dt { font: 500 16px/1.45 var(--head); color: var(--quiet); padding: 10px 0; border-top: 1px solid var(--hair); }
+.facts dd { margin: 0; font-size: 16.5px; line-height: 1.42; padding: 9px 0; border-top: 1px solid var(--hair); }
+.sources { font: 500 16px/1.5 var(--head); display: flex; flex-wrap: wrap; gap: 2px 16px; margin-top: 16px; }
+.back { font: 500 17px/1.4 var(--head); margin-top: 40px; }
+
 /* The graduated border printed around aeronautical charts. */
 .neatline {
   height: 7px; border: 1px solid var(--ink);
@@ -162,6 +195,11 @@ footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline
   .body { grid-column: 1 / -1; }
   .text-only .body { grid-column: 2 / -1; }
   footer { grid-template-columns: minmax(0, 1fr); row-gap: 14px; padding-top: 30px; padding-bottom: 40px; }
+
+  /* Award pages: the photo and facts come first, then the story. */
+  .award-head > div { padding: 26px var(--edge) 24px; }
+  .award-page { display: block; padding: 22px var(--edge) 40px; }
+  .award-page aside { margin-bottom: 32px; }
 }
 
 @media (max-width: 560px) {
@@ -171,6 +209,9 @@ footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline
   .entry { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }
   .pubs > li { grid-template-columns: 34px minmax(0, 1fr); }
   .pubs h3 { font-size: 22px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .facts dt { padding-bottom: 0; }
+  .facts dd { border-top: 0; padding-top: 2px; }
 }
 
 @media (max-width: 359px) {
@@ -184,7 +225,9 @@ footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline
 @media print {
   /* Browsers drop background colours when printing, so the white text on navy needs to turn dark on paper. */
   :root { --aw-bg: #fff; --aw-title: #10233d; --aw-text: #1d2a38; --aw-quiet: #54606d; --aw-link: #10233d; --aw-rule: #10233d; }
-  .top, .neatline { display: none; }
+  .top, .page-top, .neatline { display: none; }
+  .award-page { display: block; }
+  .award-page aside { margin-bottom: 24px; }
   .layout, .awards { display: block; }
   .awards-inner { position: static; }
   .photo img { max-width: 4.6in; }
