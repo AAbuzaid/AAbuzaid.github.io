@@ -8,7 +8,7 @@
   --sand: #e9dcbf;
   --edge: 48px;
   --awards-column: 45%;
-  --page-limit: 1760px;
+  --page-limit: 1600px; /* Wider than this, the awards column outgrows the record beside it. */
   --head: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
   --body: "Source Serif 4", Georgia, serif;
 
@@ -98,7 +98,6 @@ blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color
 .awards a { color: var(--aw-link); }
 .awards a:hover { color: var(--aw-text); }
 .awards a:focus-visible { outline-color: var(--aw-title); }
-.also figcaption { font-size: 15.5px; line-height: 1.38; color: var(--aw-quiet); margin-top: 7px; }
 
 /* The record on the left */
 .record section { padding: 26px 0 30px; border-top: 1px solid var(--rule); }
@@ -135,7 +134,8 @@ blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color
   background: repeating-linear-gradient(90deg, var(--ink) 0 48px, #fff 48px 96px);
 }
 
-footer { padding: 34px var(--edge) 56px; background: var(--sand); color: #3c3320; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 32px; }
+/* The band runs edge to edge, but its text lines up with the page above it on wide screens. */
+footer { padding: 34px max(var(--edge), calc((100% - var(--page-limit)) / 2 + var(--edge))) 56px; background: var(--sand); color: #3c3320; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); column-gap: 32px; }
 footer h2 { color: #2a2416; }
 footer p { margin-bottom: 4px; }
 footer a { color: #2a2416; }
@@ -182,7 +182,7 @@ footer .mail { font: 600 clamp(22px, 3vw, 38px)/1.1 var(--head); display: inline
   .photo img { max-width: 4.6in; }
   .photo-pair { max-width: 4.6in; }
   .awards { break-before: page; }
-  .entry, .pubs > li, .photo, .also { break-inside: avoid; }
+  .entry, .pubs > li, .photo { break-inside: avoid; }
   .award:not(:first-child) { break-inside: avoid; }
   h2, .what, .yr { break-after: avoid; }
   a { color: inherit; }
