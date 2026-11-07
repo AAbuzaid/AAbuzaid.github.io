@@ -61,6 +61,7 @@
     <p class="sources">
       <a href="https://scs26.sa/ieee-competition-ntn26/">Competition page</a>
       <a href="https://ctl.kaust.edu.sa/articles/2026/10/29/kaust-ctl-researchers-win-third-place-non-terrestrial-networks-2026">KAUST news post</a>
+      <a href="https://aabuzaid.github.io/haps-sar/">Search console</a>
     </p>
   </aside>
 
@@ -68,7 +69,28 @@
     <h2>The paper</h2>
     <p>A vehicle stranded deep in a desert such as the Rub&rsquo; al-Khali usually carries no radio beacon and is out of network coverage, so it cannot call for help, and rescuers have a very large area to search.</p>
     <p>Our paper proposes a search in layers. High-altitude platform stations (HAPS) in the stratosphere scan a wide area with optical cameras and detect vehicles. Drones then fly out to confirm each candidate at close range, and non-terrestrial links connect the platforms to the rescue coordinators.</p>
-    <p>We combined a computer-vision feasibility study, using a fine-tuned YOLO detector, with simulations of complete search missions under GEO and LEO satellite link budgets, and compared the results with a search by ground teams. The main finding is that the limit is not detection but getting the imagery to the people who make decisions. When the HAPS processes its images onboard and sends only the candidate detections, even a modest satellite link can support a wide-area search.</p>
+    <figure>
+      <img src="../assets/img/sar-overview-1000.jpg"
+           srcset="../assets/img/sar-overview-1000.jpg 1000w, ../assets/img/sar-overview-1600.jpg 1600w"
+           sizes="(max-width: 980px) 100vw, 700px"
+           width="1600" height="919" loading="lazy"
+           alt="Illustration of the search over a desert. A HAPS at 20 km images a grid of search blocks and sends coordinates, images and confidence scores through a GEO or LEO satellite to a ground station in the nearest city, which dispatches a drone flying at 100 m to confirm candidates. Panels on the left compare the satellite capacity each processing option needs: 0 Mbps when the HAPS sends only detections, 17.3 Mbps when every image goes to the ground, and 0.43 Mbps for the hybrid option.">
+      <figcaption>The search loop. The HAPS images the desert, a satellite link carries its results to a ground station, and drones fly out to confirm or clear each candidate. The panels on the left show how much satellite capacity each way of processing the images needs.</figcaption>
+    </figure>
+    <p>To get realistic detection figures, we fine-tuned a YOLO detector on aerial images of vehicles, degraded to the resolution a HAPS camera would have from 20 km. At the chosen setting it found 84.5% of vehicles, with an estimated 231 false alarms over a 20,000 km&sup2; search area, few enough for two drones to check within 48 hours.</p>
+    <figure>
+      <img src="../assets/img/sar-detections-960.jpg" width="960" height="527" loading="lazy"
+           alt="Two aerial images at 18 cm per pixel. Green boxes with confidence scores between 0.74 and 0.80 mark detected vehicles beside a farm and on a highway; a dashed red box marks one vehicle the detector missed. Insets show a detected vehicle at full scale.">
+      <figcaption>Detections at the resolution of a HAPS camera, 18 cm per pixel. Green boxes are vehicles the detector found, with its confidence; the red box on the right is one it missed.</figcaption>
+    </figure>
+    <p>We then simulated complete search missions under GEO and LEO satellite link budgets and compared them with a search by ground teams. The main finding is that the limit is not detection but getting the imagery to the people who make decisions. Processing the images on board the HAPS cuts the satellite capacity needed by about 40 times, and when the HAPS sends only its detections, even a modest link can support a wide-area search. Sending drones only to the candidates, rather than sweeping the whole area, also cuts their flying by 88%.</p>
+    <figure class="fig-narrow">
+      <img src="../assets/img/sar-mission-cliff-860.jpg" width="860" height="619" loading="lazy"
+           alt="Plot of the probability of finding the vehicle within 48 hours against the shared satellite capacity, from 0.25 to 100 Mbit/s. Processing on board stays near 0.68 at every capacity; the hybrid option reaches it at 0.432 Mbit/s; sending every image to the ground reaches it only at 17.3 Mbit/s, beyond what GEO (5.0) or sparse LEO (6.7) provide.">
+      <figcaption>Chance of finding the vehicle within 48 hours, against the satellite capacity shared by two HAPS. Sending every image to the ground (orange) needs 17.3 Mbit/s; the hybrid option (green) needs 0.43 Mbit/s, and sending only detections (blue) works at any capacity.</figcaption>
+    </figure>
+    <p>The simulation also runs in the browser as an interactive <a href="https://aabuzaid.github.io/haps-sar/">search-coordination console</a>.</p>
+    <p class="credit">Figures from the competition paper. Illustration &copy; 2026 Baha Belmekki.</p>
 
     <h2>The competition</h2>
     <p>The competition is open to researchers, graduate students, and recent PhD graduates. This edition received 81 submissions from universities around the world. In the first round, 40 committee members reviewed the papers and shortlisted ten for the final.</p>
