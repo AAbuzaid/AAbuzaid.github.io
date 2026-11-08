@@ -283,8 +283,19 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .news p:not(.date) { font-size: 17px; line-height: 1.45; }
 
 /* Research on the home page: a small figure beside each project that has one. */
-.entry h3 a, .project-full h2 a { color: inherit; text-decoration: none; background: linear-gradient(var(--hair), var(--hair)) 0 100% / 100% 1px no-repeat; }
-.entry h3 a:hover { color: var(--magenta); }
+.entry h3 a, .entry h4 a { color: inherit; text-decoration: none; background: linear-gradient(var(--hair), var(--hair)) 0 100% / 100% 1px no-repeat; }
+.entry h3 a:hover, .entry h4 a:hover { color: var(--magenta); }
+.entry h4 { font: 600 23px/1.16 var(--head); color: var(--ink); margin: 0; }
+
+/* Projects on the home page come in groups, and each project lists the papers it led to. */
+.record h3.subhead { font: 600 21px/1.2 var(--head); color: var(--ink); margin: 18px 0 10px; padding-top: 16px; border-top: 1px solid var(--hair); }
+.record .sec-head + .subhead { margin-top: 0; padding-top: 0; border-top: 0; }
+.subhead + .entry { border-top: 0; padding-top: 0; }
+.cites { list-style: none; margin: 8px 0 0; padding: 0; }
+.cites li { font-size: 15.5px; line-height: 1.4; color: var(--quiet); }
+.cites li + li { margin-top: 5px; }
+.cites b { font-weight: 600; color: var(--text); }
+.page.projects .group { max-width: 1180px; }
 .project.entry { grid-template-columns: 118px minmax(0, 1fr) 180px; padding: 14px 0; }
 .project .thumb { align-self: start; width: 100%; height: auto; margin-top: 3px; border: 1px solid var(--hair); }
 .record .credit { font-size: 15px; line-height: 1.4; color: var(--quiet); margin-top: 10px; }
