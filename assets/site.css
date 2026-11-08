@@ -312,7 +312,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* Institution logos beside Experience and Education entries, in a column of their own.
    An entry without a logo keeps its text in line with the others. */
 .with-logos .entry { grid-template-columns: 118px 46px minmax(0, 1fr); }
-.with-logos .entry > .logo { grid-column: 2; width: 46px; height: 46px; object-fit: contain; object-position: center top; margin-top: 1px; }
+.with-logos .entry > .logo { grid-column: 2; display: block; width: 46px; height: 46px; margin-top: 1px; }
+.with-logos .entry > .logo img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center top; }
+.with-logos .entry > .logo:hover img { opacity: .75; }
 .with-logos .entry > div { grid-column: 3; }
 
 /* Research page: each project with its figure on the right on wide screens. */
