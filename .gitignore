@@ -5,8 +5,15 @@
 !/.gitignore
 !/.nojekyll
 !/index.html
+!/research.html
+!/publications.html
+!/experience.html
+!/education.html
+!/leadership.html
+!/contact.html
+!/awards.html
 !/assets/
 !/awards/
-# The multi-page version at /v2/, built by tools/build_multipage.py.
+# The old /v2/ addresses, which now forward to the same pages at the root.
 !/v2/
 !/AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf

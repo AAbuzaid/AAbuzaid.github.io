@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Abdullah Abu Zaid</title>
+<meta name="description" content="Research by Abdullah Abu Zaid on wireless networks for aircraft: search and rescue with high-altitude platforms, networks for air taxis, and line-of-sight models for urban air mobility.">
+<meta name="author" content="Abdullah Abu Zaid">
+<link rel="canonical" href="https://aabuzaid.github.io/research.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=8">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <a class="home" href="./">Abdullah Abu Zaid</a>
+  <div class="nav-links">
+    <a href="research.html" aria-current="page">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="contact.html">Contact</a>
+    <a href="AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV</a>
+  </div>
+  <a class="nav-awards" href="awards.html">Awards, Honors, and Fellowships</a>
+</nav>
+
+<header class="page-head">
+  <div><h1>Research</h1></div>
+</header>
+
+<main class="page research">
+
+  <article class="entry project-full" id="search-and-rescue">
+    <p class="when">2026</p>
+    <div>
+      <h2>Desert search and rescue with high-altitude platforms and drones</h2>
+      <p class="org">Competition paper with Baha Eddine Youcef Belmekki and Mohamed-Slim Alouini. 3rd place out of 81, International Research Competition for Non-Terrestrial Networks, 2026.</p>
+      <figure>
+        <img src="assets/img/sar-detections-960.jpg" width="960" height="527"
+             alt="Desert image at the resolution of a HAPS camera. Green boxes mark the vehicles the detector found, with its confidence, and a red box marks one it missed.">
+        <figcaption>Detections at the resolution of a HAPS camera, 18 cm per pixel. Green boxes are vehicles the detector found; the red box is one it missed.</figcaption>
+      </figure>
+      <p>A vehicle stranded deep in a desert usually carries no radio beacon and is out of network coverage, so rescuers have a very large area to search. We proposed a search in layers: high-altitude platform stations (HAPS) in the stratosphere scan a wide area with optical cameras and detect vehicles, drones fly out to confirm each candidate, and non-terrestrial links connect the platforms to the rescue coordinators.</p>
+      <p>I coupled a YOLO detector, fine-tuned on aerial images degraded to the resolution of a HAPS camera, with a network simulator, and compared mission and transmission policies under GEO and LEO link budgets against a search by ground teams. The limit is not detection but getting the imagery to the people who make decisions. Processing the images on board cuts the satellite capacity needed by about 40 times, and sending drones only to the candidates cuts their flying by 88%.</p>
+      <p class="go"><a href="awards/ntn-2026.html">Full write-up with figures</a> <a href="https://aabuzaid.github.io/haps-sar/">Search console</a> <a href="https://scs26.sa/ieee-competition-ntn26/">Competition page</a></p>
+    </div>
+  </article>
+
+  <article class="entry project-full" id="air-taxi-networks">
+    <p class="when">2025</p>
+    <div>
+      <h2>Aerial and terrestrial networks for air taxis</h2>
+      <p class="org"><i>IEEE Open Journal of Vehicular Technology</i>, 2025, with Baha Eddine Youcef Belmekki and Mohamed-Slim Alouini. Subject of my Four Minute Thesis talk, 3rd place at IEEE ICC 2025.</p>
+      <figure>
+        <img src="assets/img/hetnet-association-860.jpg" width="860" height="684" loading="lazy"
+             alt="Plot of the probability that an aircraft connects to an aerial base station or to a terrestrial base station in line of sight, against its altitude, in urban, dense urban, and high-rise cities.">
+        <figcaption>Probability that an aircraft connects to an aerial base station (solid lines) or to a terrestrial one in line of sight (dashed), against its altitude, in three kinds of city. Stars are simulations. From the article, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</figcaption>
+      </figure>
+      <p>Air taxis fly along fixed corridors above a city, served by aerial base stations above the corridors and by terrestrial base stations with their antennas tilted upwards. The paper calculates how likely an aircraft is to connect to each kind of base station, and how likely its link is to work in both directions, uplink and downlink, and checks the math against simulation.</p>
+      <p>Low down, buildings block most links to the ground, so aircraft connect mostly to aerial base stations; as they climb they can reach terrestrial ones in line of sight. Choosing the base station by the strongest average signal does not always give the best coverage, because the uplink and the downlink work best with different settings.</p>
+      <p class="go"><a href="awards/4mt-2025.html">Full write-up with figures</a> <a href="https://doi.org/10.1109/OJVT.2025.3551209">The paper</a> <a href="https://youtu.be/q6bSkstrnMw">Watch the talk</a></p>
+    </div>
+  </article>
+
+  <article class="entry project-full" id="road-aware-los">
+    <p class="when">2024 to 2025</p>
+    <div>
+      <h2>A road-aware line-of-sight model for urban air mobility</h2>
+      <p class="org">ICAO Best Paper Award, 2024. Published in full in <i>IEEE Transactions on Aerospace and Electronic Systems</i>, 2025, with Baha Eddine Youcef Belmekki and Mohamed-Slim Alouini.</p>
+      <figure>
+        <img src="assets/img/los-road-aware-876.jpg" width="876" height="713" loading="lazy"
+             alt="Map of the line-of-sight probability for a vehicle on a road at the center, higher along the street than over the buildings beside it.">
+        <figcaption>Line-of-sight probability for a vehicle on a road, at the center, under the road-aware model: higher along the street (illustrative parameters). &copy; 2025 IEEE.</figcaption>
+      </figure>
+      <p>The line-of-sight model most often used for aerial links depends only on the elevation angle, so it gives a vehicle the same chance of a clear link to an aircraft above the road as to one above buildings. Our model adds a street term that applies when the aircraft is close to the road. We fitted it to ray tracing of urban, dense urban, and high-rise cities, and validated it against 3D building models of Dubai, Jeddah, and Chicago.</p>
+      <p>For an aircraft 150 m above a road, the usual model underestimates the interference from the vehicles below by up to 4.71 dB in high-rise areas. The results suggest running air corridors parallel to streets but at a distance from them.</p>
+      <p class="go"><a href="awards/icao-2024.html">Full write-up with figures</a> <a href="https://doi.org/10.1109/TAES.2025.3565696">The paper</a></p>
+    </div>
+  </article>
+
+  <article class="entry project-full" id="ntn-los">
+    <p class="when">2023</p>
+    <div>
+      <h2>A line-of-sight model for non-terrestrial coverage of urban air mobility</h2>
+      <p class="org">Contest paper with Baha Eddine Youcef Belmekki and Mohamed-Slim Alouini. 3rd place, IEEE Future Networks 6G and NTN contest, 2023.</p>
+      <p>A new line-of-sight probability model, used to analyze how non-terrestrial networks can provide coverage for urban air mobility. Presented at an IEEE Future Networks webinar on 20 December 2023.</p>
+      <p class="go"><a href="awards/6g-ntn-2023.html">More details</a> <a href="https://drive.google.com/file/d/1oAMJM4Pq9u-nKlTolr_qTst60glLs2gy/view?usp=drive_link">Webinar recording</a></p>
+    </div>
+  </article>
+
+  <article class="entry project-full" id="evtol">
+    <p class="when">2023</p>
+    <div>
+      <h2>Communications and networking for eVTOL aircraft</h2>
+      <p class="org"><i>IEEE Communications Magazine</i>, 2023, with Baha Eddine Youcef Belmekki and Mohamed-Slim Alouini. Poster at IEEE EuCNC &amp; 6G Summit 2023.</p>
+      <p>Sets out what electric air taxis need from a network, the technologies that could deliver it, and a case study comparing terrestrial and aerial infrastructure.</p>
+      <p class="go"><a href="https://doi.org/10.1109/MCOM.004.2300061">The paper</a></p>
+    </div>
+  </article>
+
+  <article class="entry project-full" id="vanets">
+    <p class="when">2023</p>
+    <div>
+      <h2>Aerial-aided mmWave vehicular networks using NOMA</h2>
+      <p class="org"><i>IEEE Transactions on Vehicular Technology</i>, first published 2023, with Baha Eddine Youcef Belmekki and Mohamed-Slim Alouini. Poster at IEEE EuCNC &amp; 6G Summit 2022.</p>
+      <p>Compares tethered flying platforms with roadside units for connecting vehicles, and ends in two tables that tell a designer which platform and transmission scheme suit a given situation.</p>
+      <p class="go"><a href="https://doi.org/10.1109/TVT.2023.3330306">The paper</a></p>
+    </div>
+  </article>
+
+</main>
+
+<div class="neatline" aria-hidden="true"></div>
+<footer class="site-foot">
+  <p><a href="mailto:abdullah.it.abuzaid@gmail.com">abdullah.it.abuzaid@gmail.com</a> &nbsp;&middot;&nbsp; Riyadh, Saudi Arabia</p>
+  <p class="links">
+      <a href="AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=PlKlXP8AAAAJ">Google Scholar</a>
+      <a href="https://orcid.org/0000-0003-2219-6940">ORCID</a>
+      <a href="https://www.linkedin.com/in/AAbuzaid">LinkedIn</a>
+      <a href="https://github.com/aabuzaid">GitHub</a>
+    </p>
+</footer>
+
+</body>
+</html>

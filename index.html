@@ -18,20 +18,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<!-- Raise v= whenever site.css changes, so browsers fetch the new file instead of reusing a cached copy. -->
-<link rel="stylesheet" href="assets/site.css?v=7">
+<!-- Raise v= on every page whenever site.css changes, so browsers fetch the new file instead of reusing a cached copy. -->
+<link rel="stylesheet" href="assets/site.css?v=8">
 </head>
 <body>
 
-<nav class="top" aria-label="Sections">
-  <div class="top-left">
-    <a href="#experience">Experience</a>
-    <a href="#publications">Publications</a>
-    <a href="#service">Leadership</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
+<nav class="site-nav" aria-label="Site">
+  <a class="home" href="./" aria-current="page">Abdullah Abu Zaid</a>
+  <div class="nav-links">
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="contact.html">Contact</a>
+    <a href="AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV</a>
   </div>
-  <div class="top-right"><a href="#awards">Awards, Honors, and Fellowships</a></div>
+  <a class="nav-awards" href="awards.html">Awards, Honors, and Fellowships</a>
 </nav>
 
 <main class="layout">
@@ -124,7 +127,7 @@
           <p class="detail">First ICAO Global Advanced Air Mobility Academic Paper Competition, 1 of 100 entries. ICAO is the United Nations agency for international civil aviation. Presented at its headquarters in Montreal.</p>
           <blockquote>&ldquo;&hellip;exemplifies the innovative thinking and rigorous research that will drive our industry forward.&rdquo;</blockquote>
           <p class="by">Juan Carlos Salazar, Secretary General of ICAO</p>
-          <p class="go"><a href="awards/icao-2024.html">More details</a> <a href="https://www.icao.int/aam-2024-global-academic-paper-competition">Competition page</a> <a href="#pub-1">The paper</a></p>
+          <p class="go"><a href="awards/icao-2024.html">More details</a> <a href="https://www.icao.int/aam-2024-global-academic-paper-competition">Competition page</a> <a href="publications.html#pub-1">The paper</a></p>
         </div>
       </li>
 
@@ -184,46 +187,80 @@
 
   <div class="record">
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <article class="entry">
-        <p class="when">2020 to present</p>
-        <div>
-          <h3>Researcher</h3>
-          <p class="org">Communication Theory Lab, King Abdullah University of Science and Technology, Thuwal</p>
-          <p><b>Search and rescue over remote desert.</b> Cameras on a high-altitude platform (HAPS) scan a wide area, onboard AI sends only vehicle detections over a modest satellite link, and drones confirm each candidate. I coupled a fine-tuned YOLO detector with a network simulator to test mission and transmission policies under GEO and LEO link budgets against a ground-team baseline.</p>
-          <p><b>Models for aerial networks.</b> Stochastic-geometry and Monte Carlo models for UAV, eVTOL, and HAPS networks, covering coverage, line-of-sight probability, and link reliability, including the road-aware line-of-sight model that won the ICAO Best Paper Award.</p>
-          <p><b>Large-scale simulation.</b> Python and MATLAB frameworks for aerial-terrestrial networks, including mmWave and NOMA-based vehicular links, run as parallel batch jobs on the Ibex HPC cluster to measure throughput and outage under realistic 3D deployments.</p>
-        </div>
-      </article>
-      <article class="entry">
-        <p class="when">2025 to 2026</p>
-        <div>
-          <h3>Autonomous Systems Intern</h3>
-          <p class="org">Boeing, Riyadh</p>
-          <p>Reviewed and gave technical feedback on the Boeing&ndash;SkyGrid&ndash;Wisk <i>Concept of Operations for Automated Flight Rules</i>, a public framework for bringing highly automated and uncrewed aircraft into shared airspace. Worked with teams across Boeing&rsquo;s U.S. and international sites on where AI and ML fit in its autonomous systems and aerospace programs.</p>
-        </div>
-      </article>
-      <article class="entry">
-        <p class="when">2022</p>
-        <div>
-          <h3>Teaching Assistant</h3>
-          <p class="org">King Abdullah University of Science and Technology, Thuwal</p>
-          <p>Assisted in teaching, graded assignments, and held office hours for about 40 students.</p>
-        </div>
-      </article>
-      <article class="entry">
-        <p class="when">2019</p>
-        <div>
-          <h3>IAESTE Research Intern</h3>
-          <p class="org">Mathematics Department, University of Lleida, Spain</p>
-          <p>Implemented cryptosystems including RSA and discrete-logarithm schemes in Python and SageMath.</p>
-        </div>
-      </article>
+    <section id="news" aria-labelledby="news-title">
+      <div class="sec-head"><h2 id="news-title">News</h2></div>
+      <ul class="news">
+        <li><p class="date">Oct 2026</p><p>Third place out of 81 entries in the <a href="awards/ntn-2026.html">International Research Competition for Non-Terrestrial Networks</a>, announced in Riyadh, with a US$5,000 prize.</p></li>
+        <li><p class="date">Dec 2025</p><p>Received my PhD in Electrical and Computer Engineering from KAUST.</p></li>
+        <li><p class="date">Oct 2025</p><p>Joined Boeing in Riyadh as an <a href="experience.html">Autonomous Systems Intern</a>, until March 2026.</p></li>
+        <li><p class="date">Jun 2025</p><p>Third place in the <a href="awards/4mt-2025.html">Four Minute Thesis competition</a> at IEEE ICC 2025 in Montreal.</p></li>
+        <li><p class="date">Dec 2024</p><p>Completed an <a href="education.html">MS in Computer Science</a>, specializing in machine learning, at Georgia Tech.</p></li>
+        <li><p class="date">Sep 2024</p><p><a href="awards/icao-2024.html">ICAO Best Paper Award</a>, presented at ICAO headquarters in Montreal.</p></li>
+        <li><p class="date">Dec 2023</p><p>Third place in the IEEE Future Networks <a href="awards/6g-ntn-2023.html">6G and NTN contest</a>.</p></li>
+      </ul>
     </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
+    <section id="research" aria-labelledby="research-title">
+      <div class="sec-head"><h2 id="research-title">Research</h2><a href="research.html">Research page</a></div>
+      <article class="entry project">
+        <p class="when">2026</p>
+        <div>
+          <h3><a href="awards/ntn-2026.html">Desert search and rescue with high-altitude platforms and drones</a></h3>
+          <p class="org">3rd place out of 81, NTN 2026 competition.</p>
+          <p>Cameras on a high-altitude platform (HAPS) scan a wide area, onboard AI sends only vehicle detections over a modest satellite link, and drones confirm each candidate.</p>
+        </div>
+        <img class="thumb" src="assets/img/sar-detections-960.jpg" width="960" height="527" loading="lazy"
+             alt="Desert image at the resolution of a HAPS camera, with green boxes around the vehicles the detector found.">
+      </article>
+      <article class="entry project">
+        <p class="when">2025</p>
+        <div>
+          <h3><a href="awards/4mt-2025.html">Aerial and terrestrial networks for air taxis</a></h3>
+          <p class="org"><i>IEEE Open Journal of Vehicular Technology</i>, 2025. 3rd place, Four Minute Thesis, IEEE ICC 2025.</p>
+          <p>Calculates how reliably a combined aerial and terrestrial network can serve air taxis flying along fixed corridors, in both directions of the link.</p>
+        </div>
+        <img class="thumb" src="assets/img/hetnet-association-860.jpg" width="860" height="684" loading="lazy"
+             alt="Plot of the probability that an aircraft connects to an aerial or a terrestrial base station, against its altitude.">
+      </article>
+      <article class="entry project">
+        <p class="when">2024 to 2025</p>
+        <div>
+          <h3><a href="awards/icao-2024.html">A road-aware line-of-sight model for urban air mobility</a></h3>
+          <p class="org">ICAO Best Paper Award, 2024. <i>IEEE Transactions on Aerospace and Electronic Systems</i>, 2025.</p>
+          <p>Shows where a widely used line-of-sight model misjudges interference from ground vehicles, then replaces it with one that accounts for city layout and where vehicles sit on the street.</p>
+        </div>
+        <img class="thumb" src="assets/img/los-road-aware-876.jpg" width="876" height="713" loading="lazy"
+             alt="Map of the line-of-sight probability around a vehicle on a road, higher along the street.">
+      </article>
+      <article class="entry project">
+        <p class="when">2023</p>
+        <div>
+          <h3><a href="awards/6g-ntn-2023.html">A line-of-sight model for non-terrestrial coverage of urban air mobility</a></h3>
+          <p class="org">3rd place, IEEE Future Networks 6G and NTN contest, 2023.</p>
+          <p>A new line-of-sight probability model, used to analyze how non-terrestrial networks can provide coverage for urban air mobility.</p>
+        </div>
+      </article>
+      <article class="entry project">
+        <p class="when">2023</p>
+        <div>
+          <h3><a href="publications.html#pub-3">Communications and networking for eVTOL aircraft</a></h3>
+          <p class="org"><i>IEEE Communications Magazine</i>, 2023.</p>
+          <p>Sets out what electric air taxis need from a network, the technologies that could deliver it, and a case study comparing terrestrial and aerial infrastructure.</p>
+        </div>
+      </article>
+      <article class="entry project">
+        <p class="when">2023</p>
+        <div>
+          <h3><a href="publications.html#pub-4">Aerial-aided mmWave vehicular networks using NOMA</a></h3>
+          <p class="org"><i>IEEE Transactions on Vehicular Technology</i>, 2023.</p>
+          <p>Compares tethered flying platforms with roadside units for connecting vehicles, and ends in two tables that tell a designer which platform and transmission scheme suit a given situation.</p>
+        </div>
+      </article>
+      <p class="credit">Figures from the papers: the 2026 competition paper; <i>IEEE OJVT</i>, under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license; and <i>IEEE TAES</i>, &copy; 2025 IEEE.</p>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-title">
+      <div class="sec-head"><h2 id="publications-title">Publications</h2><a href="publications.html">Publications page</a></div>
       <p class="h2-note">First author on all four journal articles.</p>
       <ol class="pubs">
         <li id="pub-1">
@@ -231,7 +268,6 @@
           <div>
             <h3><a href="https://ieeexplore.ieee.org/document/10980314">Extended Road-Aware Line-of-Sight Probability Model for Urban Air Mobility</a></h3>
             <p class="cite"><b>A. Abu Zaid</b>, B. E. Y. Belmekki, M.-S. Alouini. <i>IEEE Transactions on Aerospace and Electronic Systems</i>, vol. 61, no. 5, pp. 15014&ndash;15020, 2025.</p>
-            <p class="plain">Shows where a widely used line-of-sight model misjudges interference from ground vehicles, then replaces it with one that accounts for city layout and where vehicles sit on the street.</p>
             <p class="meta"><span class="win">Best Paper Award, ICAO, 2024.</span> <a href="https://doi.org/10.1109/TAES.2025.3565696">DOI</a></p>
           </div>
         </li>
@@ -240,7 +276,6 @@
           <div>
             <h3><a href="https://ieeexplore.ieee.org/abstract/document/10925893">Aerial-Terrestrial Heterogeneous Networks for Urban Air Mobility: A Performance Analysis</a></h3>
             <p class="cite"><b>A. Abu Zaid</b>, B. E. Y. Belmekki, M.-S. Alouini. <i>IEEE Open Journal of Vehicular Technology</i>, vol. 6, pp. 912&ndash;926, 2025.</p>
-            <p class="plain">Calculates how reliably a combined aerial and terrestrial network can serve air taxis flying along fixed corridors, in both directions of the link, and checks the math against simulation.</p>
             <p class="meta">Poster at IEEE CTW 2024, Banff, Canada. <a href="https://doi.org/10.1109/OJVT.2025.3551209">DOI</a></p>
           </div>
         </li>
@@ -249,7 +284,6 @@
           <div>
             <h3><a href="https://ieeexplore.ieee.org/abstract/document/10230034">eVTOL Communications and Networking in UAM: Requirements, Key Enablers, and Challenges</a></h3>
             <p class="cite"><b>A. Abu Zaid</b>, B. E. Y. Belmekki, M.-S. Alouini. <i>IEEE Communications Magazine</i>, vol. 61, no. 8, pp. 154&ndash;160, 2023.</p>
-            <p class="plain">Sets out what electric air taxis need from a network, the technologies that could deliver it, and a case study comparing terrestrial and aerial infrastructure.</p>
             <p class="meta">Poster at IEEE EuCNC &amp; 6G Summit 2023, Gothenburg, Sweden. <a href="https://doi.org/10.1109/MCOM.004.2300061">DOI</a></p>
           </div>
         </li>
@@ -258,7 +292,6 @@
           <div>
             <h3><a href="https://ieeexplore.ieee.org/abstract/document/10309253">Aerial-Aided mmWave VANETs Using NOMA: Performance Analysis, Comparison, and Insights</a></h3>
             <p class="cite"><b>A. Abu Zaid</b>, B. E. Y. Belmekki, M.-S. Alouini. <i>IEEE Transactions on Vehicular Technology</i>, vol. 73, no. 4, pp. 4742&ndash;4758. First published 2023.</p>
-            <p class="plain">Compares tethered flying platforms with roadside units for connecting vehicles, and ends in two tables that tell a designer which platform and transmission scheme suit a given situation.</p>
             <p class="meta">Poster at IEEE EuCNC &amp; 6G Summit 2022, Grenoble, France. <a href="https://doi.org/10.1109/TVT.2023.3330306">DOI</a></p>
           </div>
         </li>
@@ -272,20 +305,44 @@
       </ol>
     </section>
 
-    <section id="service">
-      <h2>Leadership and service</h2>
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="sec-head"><h2 id="experience-title">Experience</h2><a href="experience.html">Experience page</a></div>
       <article class="entry">
-        <p class="when">Peer review</p>
-        <p>IEEE Transactions on Vehicular Technology, IEEE Transactions on Industrial Informatics, IEEE Communications Magazine; IEEE VTC2023-Spring, VTC2024-Spring, PIMRC 2025.</p>
+        <p class="when">2020 to present</p>
+        <div>
+          <h3>Researcher</h3>
+          <p class="org">Communication Theory Lab, King Abdullah University of Science and Technology, Thuwal</p>
+          <p>Stochastic-geometry and Monte Carlo models for UAV, eVTOL, and HAPS networks; large-scale simulation on the Ibex HPC cluster; and an AI-enabled HAPS and drone system for desert search and rescue.</p>
+        </div>
       </article>
       <article class="entry">
-        <p class="when">KAUST</p>
-        <p>Orientation Leader (2024, 2025), Winter Enrichment Program (2023, 2025), Career Fair (2022, 2023), Commencement (2023).</p>
+        <p class="when">2025 to 2026</p>
+        <div>
+          <h3>Autonomous Systems Intern</h3>
+          <p class="org">Boeing, Riyadh</p>
+          <p>Reviewed and gave technical feedback on the Boeing&ndash;SkyGrid&ndash;Wisk <i>Concept of Operations for Automated Flight Rules</i>, a public framework for bringing highly automated and uncrewed aircraft into shared airspace.</p>
+        </div>
+      </article>
+      <article class="entry">
+        <p class="when">2022</p>
+        <div>
+          <h3>Teaching Assistant</h3>
+          <p class="org">King Abdullah University of Science and Technology, Thuwal</p>
+          <p>For the Numerical Optimization course, assisted in teaching, graded assignments, and held office hours for about 40 students.</p>
+        </div>
+      </article>
+      <article class="entry">
+        <p class="when">2019</p>
+        <div>
+          <h3>IAESTE Research Intern</h3>
+          <p class="org">Mathematics Department, University of Lleida, Spain</p>
+          <p>Implemented cryptosystems including RSA and discrete-logarithm schemes in Python and SageMath.</p>
+        </div>
       </article>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
+    <section id="education" aria-labelledby="education-title">
+      <div class="sec-head"><h2 id="education-title">Education</h2><a href="education.html">Education page</a></div>
       <article class="entry">
         <p class="when">2022 to 2025</p>
         <div>
@@ -313,6 +370,18 @@
           <h3>BSc, Electrical Engineering</h3>
           <p class="org">University of Jordan. Ranked 1st of 81. GPA 3.80/4.0.</p>
         </div>
+      </article>
+    </section>
+
+    <section id="service" aria-labelledby="service-title">
+      <div class="sec-head"><h2 id="service-title">Leadership and service</h2><a href="leadership.html">Leadership and service page</a></div>
+      <article class="entry">
+        <p class="when">Peer review</p>
+        <p>IEEE Transactions on Vehicular Technology, IEEE Transactions on Industrial Informatics, IEEE Communications Magazine; IEEE VTC2023-Spring, VTC2024-Spring, PIMRC 2025.</p>
+      </article>
+      <article class="entry">
+        <p class="when">Volunteering</p>
+        <p>At KAUST: Orientation Leader (2024, 2025), Winter Enrichment Program (2023, 2025), Career Fair (2022, 2023), Commencement (2023).</p>
       </article>
     </section>
 
