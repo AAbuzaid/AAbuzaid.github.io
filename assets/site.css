@@ -289,6 +289,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .project .thumb { align-self: start; width: 100%; height: auto; margin-top: 3px; border: 1px solid var(--hair); }
 .record .credit { font-size: 15px; line-height: 1.4; color: var(--quiet); margin-top: 10px; }
 
+/* Institution logos beside Experience and Education entries, in a column of their own.
+   An entry without a logo keeps its text in line with the others. */
+.with-logos .entry { grid-template-columns: 118px 46px minmax(0, 1fr); }
+.with-logos .entry > .logo { grid-column: 2; width: 46px; height: 46px; object-fit: contain; object-position: center top; margin-top: 1px; }
+.with-logos .entry > div { grid-column: 3; }
+
 /* Research page: each project with its figure on the right on wide screens. */
 .page .project-full { max-width: 1180px; padding: 20px 0 24px; }
 .page .project-full:first-child { padding-top: 0; }
@@ -354,6 +360,11 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .pubs h2 { font-size: 22px; }
   .news li, .project.entry { grid-template-columns: minmax(0, 1fr); }
   .project .thumb { grid-column: 1; }
+  /* The dates go above, and the logo sits beside the heading. */
+  .with-logos .entry { grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; }
+  .with-logos .entry > .when { grid-column: 1 / -1; }
+  .with-logos .entry > .logo { grid-column: 1; width: 38px; height: 38px; }
+  .with-logos .entry > div { grid-column: 2; }
 }
 
 @media (min-width: 981px) {
