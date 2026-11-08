@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3rd place, NTN 2026 International Research Competition · Abdullah Abu Zaid</title>
+<meta name="description" content="Third place out of 81 submissions, with a US$5,000 prize, for an AI-enabled multi-layer non-terrestrial network for desert search and rescue. Riyadh, October 2026.">
+<meta name="author" content="Abdullah Abu Zaid">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://aabuzaid.github.io/awards/ntn-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aabuzaid.github.io/awards/ntn-2026.html">
+<meta property="og:title" content="3rd place, NTN 2026 International Research Competition">
+<meta property="og:description" content="Third place out of 81 submissions, with a US$5,000 prize. Riyadh, October 2026.">
+<meta property="og:image" content="https://aabuzaid.github.io/assets/img/ntn-2026-1400.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=d59c480d">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <a class="home" href="../">Abdullah Abu Zaid</a>
+  <div class="nav-links">
+    <a href="../experience.html">Experience</a>
+    <a href="../publications.html">Publications</a>
+    <a href="../leadership.html">Leadership</a>
+    <a href="../education.html">Education</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+  <a class="nav-awards" href="../awards.html" aria-current="page">Awards, Honors, and Fellowships</a>
+</nav>
+
+<header class="award-head">
+  <div>
+    <h1>3rd place, NTN 2026 International Research Competition</h1>
+    <p class="when">October 2026, Riyadh</p>
+  </div>
+</header>
+
+<main class="award-page">
+
+  <aside>
+    <div class="photo">
+      <img src="../../assets/img/ntn-2026-900.jpg"
+           srcset="../../assets/img/ntn-2026-900.jpg 900w, ../../assets/img/ntn-2026-1400.jpg 1400w"
+           sizes="(max-width: 980px) 100vw, 40vw"
+           width="1400" height="788"
+           alt="Official IEEE and Communications, Space and Technology Commission graphic. Dr. Abdullah Abu Zaid is named third-place winner, with a 5,000 dollar prize, of the Third Edition of the International Research Competition for Non-Terrestrial Networks, for AI-Enabled Multi-Layer NTN for Rapid Target Acquisition in Desert Search and Rescue.">
+    </div>
+    <dl class="facts">
+      <dt>Result</dt>
+      <dd>3rd place out of 81 submissions, with a US$5,000 prize</dd>
+      <dt>Competition</dt>
+      <dd>International Research Competition for Non-Terrestrial Networks, third edition</dd>
+      <dt>Organizers</dt>
+      <dd>Saudi Arabia&rsquo;s Communications, Space and Technology Commission (CST), with IEEE</dd>
+      <dt>Announced</dt>
+      <dd>Global Space Connectivity and Sustainability Events 2026, Riyadh, 12&ndash;14 October 2026</dd>
+      <dt>Paper</dt>
+      <dd>AI-Enabled Multi-Layer NTN for Rapid Target Acquisition in Desert Search and Rescue</dd>
+      <dt>Authors</dt>
+      <dd>Abdullah Abu Zaid and Mohamed-Slim Alouini (KAUST), Baha Eddine Youcef Belmekki (Heriot-Watt University)</dd>
+    </dl>
+    <p class="sources">
+      <a href="https://scs26.sa/ieee-competition-ntn26/">Competition page</a>
+      <a href="https://ctl.kaust.edu.sa/articles/2026/10/29/kaust-ctl-researchers-win-third-place-non-terrestrial-networks-2026">KAUST news post</a>
+      <a href="https://aabuzaid.github.io/haps-sar/">Search console</a>
+    </p>
+  </aside>
+
+  <article class="story">
+    <h2>The paper</h2>
+    <p>A vehicle stranded deep in a desert such as the Rub&rsquo; al-Khali usually carries no radio beacon and is out of network coverage, so it cannot call for help, and rescuers have a very large area to search.</p>
+    <p>Our paper proposes a search in layers. High-altitude platform stations (HAPS) in the stratosphere scan a wide area with optical cameras and detect vehicles. Drones then fly out to confirm each candidate at close range, and non-terrestrial links connect the platforms to the rescue coordinators.</p>
+    <figure>
+      <img src="../../assets/img/sar-overview-1000.jpg"
+           srcset="../../assets/img/sar-overview-1000.jpg 1000w, ../../assets/img/sar-overview-1600.jpg 1600w"
+           sizes="(max-width: 980px) 100vw, 700px"
+           width="1600" height="919" loading="lazy"
+           alt="Illustration of the search over a desert. A HAPS at 20 km images a grid of search blocks and sends coordinates, images and confidence scores through a GEO or LEO satellite to a ground station in the nearest city, which dispatches a drone flying at 100 m to confirm candidates. Panels on the left compare the satellite capacity each processing option needs: 0 Mbps when the HAPS sends only detections, 17.3 Mbps when every image goes to the ground, and 0.43 Mbps for the hybrid option.">
+      <figcaption>The search loop. The HAPS images the desert, a satellite link carries its results to a ground station, and drones fly out to confirm or clear each candidate. The panels on the left show how much satellite capacity each way of processing the images needs.</figcaption>
+    </figure>
+    <p>To get realistic detection figures, we fine-tuned a YOLO detector on aerial images of vehicles, degraded to the resolution a HAPS camera would have from 20 km. At the chosen setting it found 84.5% of vehicles, with an estimated 231 false alarms over a 20,000 km&sup2; search area, few enough for two drones to check within 48 hours.</p>
+    <figure>
+      <img src="../../assets/img/sar-detections-960.jpg" width="960" height="527" loading="lazy"
+           alt="Two aerial images at 18 cm per pixel. Green boxes with confidence scores between 0.74 and 0.80 mark detected vehicles beside a farm and on a highway; a dashed red box marks one vehicle the detector missed. Insets show a detected vehicle at full scale.">
+      <figcaption>Detections at the resolution of a HAPS camera, 18 cm per pixel. Green boxes are vehicles the detector found, with its confidence; the red box on the right is one it missed.</figcaption>
+    </figure>
+    <p>We then simulated complete search missions under GEO and LEO satellite link budgets and compared them with a search by ground teams. The main finding is that the limit is not detection but getting the imagery to the people who make decisions. Processing the images on board the HAPS cuts the satellite capacity needed by about 40 times, and when the HAPS sends only its detections, even a modest link can support a wide-area search. Sending drones only to the candidates, rather than sweeping the whole area, also cuts their flying by 88%.</p>
+    <figure class="fig-narrow">
+      <img src="../../assets/img/sar-mission-cliff-860.jpg" width="860" height="619" loading="lazy"
+           alt="Plot of the probability of finding the vehicle within 48 hours against the shared satellite capacity, from 0.25 to 100 Mbit/s. Processing on board stays near 0.68 at every capacity; the hybrid option reaches it at 0.432 Mbit/s; sending every image to the ground reaches it only at 17.3 Mbit/s, beyond what GEO (5.0) or sparse LEO (6.7) provide.">
+      <figcaption>Chance of finding the vehicle within 48 hours, against the satellite capacity shared by two HAPS. Sending every image to the ground (orange) needs 17.3 Mbit/s; the hybrid option (green) needs 0.43 Mbit/s, and sending only detections (blue) works at any capacity.</figcaption>
+    </figure>
+    <p>The simulation also runs in the browser as an interactive <a href="https://aabuzaid.github.io/haps-sar/">search-coordination console</a>.</p>
+    <p class="credit">Figures from the competition paper. Illustration &copy; 2026 Baha Belmekki.</p>
+
+    <h2>The competition</h2>
+    <p>The competition is open to researchers, graduate students, and recent PhD graduates. This edition received 81 submissions from universities around the world. In the first round, 40 committee members reviewed the papers and shortlisted ten for the final.</p>
+    <p>Two weeks before the event in Riyadh, the ten finalists presented in a closed session: a seven-minute talk, then three minutes of questions from a panel drawn from academia, the NTN industry, and regulators. Entries were scored on innovation and originality, sustainability and connectivity impact, practicality and business value, and the presentation and discussion. The prizes were US$15,000, US$10,000, and US$5,000 for the top three.</p>
+    <p>The winners were announced at the Global Space Connectivity and Sustainability Events 2026, which CST and the International Telecommunication Union (ITU) organized together in Riyadh.</p>
+
+    <p class="back"><a href="../awards.html">Back to all awards, honors, and fellowships</a></p>
+  </article>
+
+</main>
+
+<div class="neatline" aria-hidden="true"></div>
+<footer class="site-foot">
+  <p><a href="mailto:abdullah.it.abuzaid@gmail.com">abdullah.it.abuzaid@gmail.com</a> &nbsp;&middot;&nbsp; Riyadh, Saudi Arabia</p>
+  <p class="links">
+      <a href="../../AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=PlKlXP8AAAAJ">Google Scholar</a>
+      <a href="https://orcid.org/0000-0003-2219-6940">ORCID</a>
+      <a href="https://www.linkedin.com/in/AAbuzaid">LinkedIn</a>
+      <a href="https://github.com/aabuzaid">GitHub</a>
+    </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Paper Award, ICAO 2024 · Abdullah Abu Zaid</title>
+<meta name="description" content="Best Paper Award in the first ICAO Global Advanced Air Mobility Academic Paper Competition, presented at ICAO headquarters in Montreal, September 2024.">
+<meta name="author" content="Abdullah Abu Zaid">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://aabuzaid.github.io/awards/icao-2024.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aabuzaid.github.io/awards/icao-2024.html">
+<meta property="og:title" content="Best Paper Award, ICAO 2024">
+<meta property="og:description" content="First ICAO Global Advanced Air Mobility Academic Paper Competition, Montreal, September 2024.">
+<meta property="og:image" content="https://aabuzaid.github.io/assets/img/icao-best-paper-1280.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=d59c480d">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <a class="home" href="../">Abdullah Abu Zaid</a>
+  <div class="nav-links">
+    <a href="../experience.html">Experience</a>
+    <a href="../publications.html">Publications</a>
+    <a href="../leadership.html">Leadership</a>
+    <a href="../education.html">Education</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+  <a class="nav-awards" href="../awards.html" aria-current="page">Awards, Honors, and Fellowships</a>
+</nav>
+
+<header class="award-head">
+  <div>
+    <h1>Best Paper Award, ICAO Global Advanced Air Mobility Academic Paper Competition</h1>
+    <p class="when">September 2024, Montreal</p>
+  </div>
+</header>
+
+<main class="award-page">
+
+  <aside>
+    <div class="photo">
+      <img src="../../assets/img/icao-best-paper-900.jpg"
+           srcset="../../assets/img/icao-best-paper-900.jpg 900w, ../../assets/img/icao-best-paper-1280.jpg 1280w"
+           sizes="(max-width: 980px) 100vw, 40vw"
+           width="1280" height="1021"
+           alt="Official ICAO graphic. Abdullah Abu Zaid and co-author Baha Eddine Youcef Belmekki hold their certificates on stage at ICAO headquarters in Montreal, above a quote from Secretary General Juan Carlos Salazar announcing them as winners of the first ICAO Global Advanced Air Mobility paper competition.">
+    </div>
+    <dl class="facts">
+      <dt>Result</dt>
+      <dd>Best Paper Award, 1 of 100 entries</dd>
+      <dt>Competition</dt>
+      <dd>First Global Advanced Air Mobility (AAM) Academic Paper Competition</dd>
+      <dt>Organizer</dt>
+      <dd>International Civil Aviation Organization (ICAO), the United Nations agency for international civil aviation</dd>
+      <dt>Presented</dt>
+      <dd>ICAO&rsquo;s first Advanced Air Mobility Symposium, ICAO headquarters, Montreal, 9&ndash;12 September 2024</dd>
+      <dt>Paper</dt>
+      <dd>Urban Air Mobility Communications: Coverage Analysis and Corridor Design</dd>
+      <dt>Authors</dt>
+      <dd>Abdullah Abu Zaid, Baha Eddine Youcef Belmekki, Mohamed-Slim Alouini</dd>
+    </dl>
+    <p class="sources">
+      <a href="https://www.icao.int/aam-2024-global-academic-paper-competition">Competition page</a>
+      <a href="https://ctl.kaust.edu.sa/articles/2024/09/20/kaust-ctl-researchers-receive-best-paper-award-icao">KAUST news post</a>
+      <a href="../publications.html#pub-1">Journal article</a>
+    </p>
+  </aside>
+
+  <article class="story">
+    <blockquote>&ldquo;Their paper &hellip; exemplifies the innovative thinking and rigorous research that will drive our industry forward.&rdquo;</blockquote>
+    <p class="quote-by">Juan Carlos Salazar, Secretary General of ICAO</p>
+
+    <h2>The paper</h2>
+    <p>Air taxis and other electric aircraft need a dependable network link for navigation, control, traffic coordination, and monitoring. Terrestrial networks were built mainly for users on the ground, so the paper looks at non-terrestrial options such as tethered and stratospheric platforms.</p>
+    <p>To analyze how these platforms would perform, the paper introduces a new line-of-sight model that accounts for buildings and for users on the ground. We validated it with ray tracing and tested it against data from cities with different building densities and heights, including Jeddah, Dubai, and Chicago.</p>
+
+    <h2>The model</h2>
+    <p>The full model is published in <i>IEEE Transactions on Aerospace and Electronic Systems</i> (2025) as <a href="../publications.html#pub-1">Extended Road-Aware Line-of-Sight Probability Model for Urban Air Mobility</a>.</p>
+    <p>The line-of-sight model most often used for aerial links depends only on the elevation angle between the aircraft and the ground user. It gives a vehicle the same chance of a clear link to an aircraft above the road as to one above buildings at the same distance. In practice the airspace over a street is mostly open, so vehicles on the road are much more likely to have a clear link to an aircraft flying over it.</p>
+    <figure class="fig-pair">
+      <img src="../../assets/img/los-traditional-880.jpg" width="880" height="714" loading="lazy"
+           alt="Heat map of line-of-sight probability around a ground vehicle on a road, under the usual model. The probability falls off in circles, so two base stations at the same distance, one above the road and one above buildings, both get 0.61.">
+      <img src="../../assets/img/los-road-aware-876.jpg" width="876" height="713" loading="lazy"
+           alt="Heat map of line-of-sight probability around a ground vehicle on a road, under the road-aware model. The high-probability region stretches along the road.">
+      <figcaption>Line-of-sight probability for a vehicle on a road, at the center. Left: the usual model gives the same value, 0.61, to two base stations at the same distance, one above the road and one above buildings. Right: the road-aware model raises the probability along the street (illustrative parameters).</figcaption>
+    </figure>
+    <p>Our model adds a street term that applies when the aircraft is close to the road and gives way to the usual environment term as the aircraft moves away from it. We fitted its parameters to ray-tracing simulations of urban, dense urban, and high-rise cities, and validated it against 3D building models of Dubai, Jeddah, and Chicago from OpenStreetMap. In suburban areas the street makes no difference, so the usual model is enough there.</p>
+    <figure>
+      <img src="../../assets/img/los-ray-tracing-1000.jpg"
+           srcset="../../assets/img/los-ray-tracing-1000.jpg 1000w, ../../assets/img/los-ray-tracing-1600.jpg 1600w"
+           sizes="(max-width: 980px) 100vw, 55vw"
+           width="1600" height="408" loading="lazy"
+           alt="Three 3D city views from OpenStreetMap building models of Dubai, Jeddah, and Chicago. Lines run from a vehicle on a street to points along a path across the street, green where the link is clear and red where buildings block it.">
+      <figcaption>Ray tracing between a vehicle on a street and an aircraft at points along a path across the street, in Dubai, Jeddah, and Chicago, from left to right. Green lines are clear links and red lines are blocked.</figcaption>
+    </figure>
+    <p>The difference matters for interference. For an aircraft 150 m above a road, the usual model underestimates the interference it receives from the vehicles below, by up to 4.71 dB in high-rise areas. The results suggest running air corridors parallel to streets but at a distance from them, and placing non-terrestrial base stations along and above the corridors.</p>
+    <figure class="fig-narrow">
+      <img src="../../assets/img/los-interference-582.jpg" width="582" height="459" loading="lazy"
+           alt="Plot of interference in dB against the aircraft's position across the road, from minus 300 to 300 meters. The road-aware curve peaks 4.71 dB above the usual model's curve directly over the road.">
+      <figcaption>Interference received by an aircraft 150 m above a road in a high-rise area, under the road-aware (extended) and usual (traditional) models. The gap is 0.42 dB in urban and 0.72 dB in dense urban areas.</figcaption>
+    </figure>
+    <p class="credit">Figures from the journal article, &copy; 2025 IEEE.</p>
+
+    <h2>The competition</h2>
+    <p>Judging was anonymous: the jury did not see the authors&rsquo; names or affiliations. More than 100 abstracts were submitted, on topics ranging from technology and safety to regulation, urban planning, law, and sustainability. Of these, 41 went on to the second round, 21 were invited to submit full papers, and 12 papers reached the final round.</p>
+    <p>The jury included experts from the National Research Council Canada, SESAR, JAXA, and NASA, and judged the papers on originality, applicability, and technical soundness. The runner-up was a paper from the University of Michigan.</p>
+    <p>Baha Eddine Youcef Belmekki and I were invited to present the paper at ICAO headquarters, to an audience of government representatives, industry, academics, and international organizations.</p>
+
+    <h2 id="gaca">Appreciation from GACA</h2>
+    <p>At the same symposium, Saudi Arabia&rsquo;s General Authority of Civil Aviation (GACA) presented us with a commemorative trophy.</p>
+    <div class="photo">
+      <img src="../../assets/img/gaca-appreciation-700.jpg"
+           srcset="../../assets/img/gaca-appreciation-700.jpg 700w, ../../assets/img/gaca-appreciation-1280.jpg 1280w"
+           sizes="(max-width: 980px) 100vw, 55vw"
+           width="1280" height="720" loading="lazy"
+           alt="Official photo from Saudi Arabia's General Authority of Civil Aviation. Abdullah Abu Zaid and co-author Baha Eddine Youcef Belmekki, wearing AAM 2024 lanyards, are presented with a commemorative trophy.">
+    </div>
+
+    <p class="back"><a href="../awards.html">Back to all awards, honors, and fellowships</a></p>
+  </article>
+
+</main>
+
+<div class="neatline" aria-hidden="true"></div>
+<footer class="site-foot">
+  <p><a href="mailto:abdullah.it.abuzaid@gmail.com">abdullah.it.abuzaid@gmail.com</a> &nbsp;&middot;&nbsp; Riyadh, Saudi Arabia</p>
+  <p class="links">
+      <a href="../../AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=PlKlXP8AAAAJ">Google Scholar</a>
+      <a href="https://orcid.org/0000-0003-2219-6940">ORCID</a>
+      <a href="https://www.linkedin.com/in/AAbuzaid">LinkedIn</a>
+      <a href="https://github.com/aabuzaid">GitHub</a>
+    </p>
+</footer>
+
+</body>
+</html>

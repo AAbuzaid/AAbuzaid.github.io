@@ -7,4 +7,6 @@
 !/index.html
 !/assets/
 !/awards/
+# The multi-page version at /v2/, built by tools/build_multipage.py.
+!/v2/
 !/AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf
