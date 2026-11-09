@@ -34,7 +34,7 @@ h2 { font: 600 32px/1.05 var(--head); color: var(--ink); margin: 0; letter-spaci
 
 /* Sections and publications stop below the sticky navigation bar when a link jumps to them. */
 section, footer { scroll-margin-top: 56px; }
-.pubs li { scroll-margin-top: 64px; }
+.pubs li, .project-full { scroll-margin-top: 64px; }
 
 /* Home page: two columns, the person on the left, the awards on the right.
    In the source the awards sit between the two left blocks, so on a phone they follow the introduction. */
@@ -140,6 +140,9 @@ blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color
 .story .fig-narrow { max-width: 30em; }
 .story figcaption { font-size: 15.5px; line-height: 1.4; color: var(--quiet); margin-top: 8px; }
 .story .credit { font-size: 15px; color: var(--quiet); }
+.story ol { max-width: 40em; margin: 12px 0 0; padding-left: 1.5em; }
+.story ol li + li { margin-top: 8px; }
+.story ol + p { margin-top: 12px; }
 .facts { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 18px; margin: 20px 0 0; border-bottom: 1px solid var(--hair); }
 .facts dt { font: 500 16px/1.45 var(--head); color: var(--quiet); padding: 10px 0; border-top: 1px solid var(--hair); }
 .facts dd { margin: 0; font-size: 16.5px; line-height: 1.42; padding: 9px 0; border-top: 1px solid var(--hair); }

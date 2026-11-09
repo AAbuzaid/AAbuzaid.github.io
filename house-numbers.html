@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>House number recognition with neural networks · Abdullah Abu Zaid</title>
+<meta name="description" content="A system that finds and reads the digits in photos of house numbers, built with PyTorch and OpenCV for the Computer Vision course at Georgia Tech, spring 2024.">
+<meta name="author" content="Abdullah Abu Zaid">
+<link rel="canonical" href="https://aabuzaid.github.io/house-numbers.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aabuzaid.github.io/house-numbers.html">
+<meta property="og:title" content="House number recognition with neural networks">
+<meta property="og:description" content="Finding and reading the digits in photos of house numbers. Computer Vision course project, Georgia Tech, spring 2024.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=14">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Site">
+  <a class="home" href="./">Abdullah Abu Zaid</a>
+  <div class="nav-links">
+    <a href="projects.html" aria-current="page">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="references.html">References</a>
+  </div>
+  <a class="nav-awards" href="awards.html">Awards, Honors, and Fellowships</a>
+</nav>
+
+<header class="award-head with-profile">
+  <div>
+    <h1>House number recognition with neural networks</h1>
+    <p class="when">Spring 2024, Computer Vision course project, Georgia Tech</p>
+  </div>
+</header>
+
+<div class="has-profile">
+<aside class="profile" aria-label="Profile">
+  <a class="profile-photo" href="./"><img src="assets/img/portrait-900.jpg" width="900" height="900" alt="Portrait of Abdullah Abu Zaid."></a>
+  <div class="profile-text">
+    <p class="profile-name"><a href="./">Abdullah Abu Zaid</a></p>
+    <p class="profile-role">Wireless communications researcher. PhD, KAUST.</p>
+    <p class="profile-place">Riyadh, Saudi Arabia</p>
+  </div>
+  <ul class="profile-links">
+    <li><a href="mailto:abdullah.it.abuzaid@gmail.com">Email</a></li>
+    <li><a href="AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV (PDF)</a></li>
+    <li><a href="https://scholar.google.com/citations?user=PlKlXP8AAAAJ">Google Scholar</a></li>
+    <li><a href="https://orcid.org/0000-0003-2219-6940">ORCID</a></li>
+    <li><a href="https://www.linkedin.com/in/AAbuzaid">LinkedIn</a></li>
+    <li><a href="https://github.com/aabuzaid">GitHub</a></li>
+  </ul>
+</aside>
+
+<main class="award-page">
+
+  <aside>
+    <dl class="facts">
+      <dt>Course</dt>
+      <dd>CS 6476 Computer Vision, Georgia Tech, part of the <a href="education.html">MS in Computer Science</a></dd>
+      <dt>Term</dt>
+      <dd>Spring 2024</dd>
+      <dt>Report</dt>
+      <dd><i>Classification and Detection with Convolutional Neural Networks</i>, April 2024</dd>
+      <dt>Tools</dt>
+      <dd>Python, PyTorch, torchvision, OpenCV</dd>
+      <dt>Data</dt>
+      <dd>Street View House Numbers (SVHN)</dd>
+    </dl>
+    <p class="sources">
+      <a href="https://omscs.gatech.edu/cs-6476-computer-vision">Course page</a>
+      <a href="https://ufldl.stanford.edu/housenumbers/">SVHN dataset</a>
+    </p>
+  </aside>
+
+  <article class="story">
+    <h2>The problem</h2>
+    <p>Reading the number on a house from a photo is harder than reading a scanned page. The digits can be large or small, in any font or color, at an angle, and set against brick, wood, glass, or plants, and most of the photo is not a digit at all. For the final project of Georgia Tech&rsquo;s Computer Vision course, I built a system that finds the digits in a photo and then reads them.</p>
+
+    <h2>How it works</h2>
+    <p>The system has two stages, each with its own neural network, trained in PyTorch on the Street View House Numbers (SVHN) dataset: more than 73,000 digits cropped from Google Street View photos and scaled to 32 by 32 pixels.</p>
+    <ol>
+      <li>The photo is converted to grayscale. Where the background is busy, it is smoothed with a Gaussian filter and then reduced to black and white with Otsu&rsquo;s threshold.</li>
+      <li>A square window slides across the photo, and a detector network decides at each position whether the window holds a digit or only background. I trained it on SVHN digits against background patches cut from photos.</li>
+      <li>A second network reads each window the detector kept, as a digit from 0 to 9. To center the digit, it tries the window shifted by up to 20 pixels in each direction and keeps the position where it is most confident. Windows that settle on the same position are counted once.</li>
+      <li>The window size is set to the size of the digits in the photo, and for a slanted digit the window is also turned in steps of 15 degrees.</li>
+    </ol>
+
+    <h2>Choosing the network</h2>
+    <p>For the digit reader I compared two networks. One was small, with four hidden layers, and trained from scratch on grayscale digits. The other was VGG16, a large convolutional network pre-trained on the ImageNet photo collection, with its last layer replaced and retrained for the ten digits. VGG16 took an order of magnitude longer to train, so the system uses the small network, which reached 83.1% accuracy on the SVHN test digits after five passes through the training data.</p>
+    <figure class="fig-narrow">
+      <img src="assets/img/house-numbers-training-850.png" width="850" height="500" loading="lazy"
+           alt="Plot of training loss and test loss against epochs, from 1 to 5. Training loss falls from about 2.0 to 0.6, and test loss from about 1.6 to 0.7.">
+      <figcaption>Training and test loss of the small network over its five epochs of training on SVHN.</figcaption>
+    </figure>
+
+    <h2>Results</h2>
+    <p>On five test photos of house numbers, with one or two digits each in different sizes, fonts, colors, and light, the system returned the right numbers: 52, 4, 5, 3, and 8. The 3 was slanted and was found with a turned window.</p>
+    <p>On a sixth photo, of a front door numbered 34, it also took the door handle for a 1, since a short upright bar looks very much like the digit. Checking the area around each candidate, and rejecting shapes that belong to a larger object such as a handle, would prevent this kind of error.</p>
+
+    <h2>Limits and next steps</h2>
+    <p>The window size and the cleanup of the image were set for each test photo. Choosing them automatically, by searching over window sizes, would make the system general but slower. The search is already the slow part, because every position, size, and angle is a separate pass through the network. The windows do not depend on each other, so the search could run in parallel.</p>
+
+    <p class="back"><a href="projects.html#house-numbers">Back to all projects</a></p>
+  </article>
+
+</main>
+</div>
+
+<div class="neatline" aria-hidden="true"></div>
+<footer class="site-foot">
+  <p><a href="mailto:abdullah.it.abuzaid@gmail.com">abdullah.it.abuzaid@gmail.com</a> &nbsp;&middot;&nbsp; Riyadh, Saudi Arabia</p>
+  <p class="links">
+      <a href="AbdullahAbuzaid_CV_Wireless_AI_Postdoc_Researcher.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=PlKlXP8AAAAJ">Google Scholar</a>
+      <a href="https://orcid.org/0000-0003-2219-6940">ORCID</a>
+      <a href="https://www.linkedin.com/in/AAbuzaid">LinkedIn</a>
+      <a href="https://github.com/aabuzaid">GitHub</a>
+    </p>
+</footer>
+
+</body>
+</html>
