@@ -143,6 +143,12 @@ blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color
 .story ol { max-width: 40em; margin: 12px 0 0; padding-left: 1.5em; }
 .story ol li + li { margin-top: 8px; }
 .story ol + p { margin-top: 12px; }
+.story table { border-collapse: collapse; margin: 14px 0 6px; font-size: 16.5px; line-height: 1.4; }
+.story th, .story td { text-align: left; padding: 8px 32px 8px 0; border-top: 1px solid var(--hair); vertical-align: top; }
+.story thead th { font: 500 16px/1.4 var(--head); color: var(--quiet); border-top: 0; padding-top: 0; }
+.story tbody tr:last-child td { border-bottom: 1px solid var(--hair); }
+.story th + th, .story td + td { text-align: right; padding-right: 0; font-variant-numeric: tabular-nums; }
+.story table + p { margin-top: 14px; }
 .facts { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 18px; margin: 20px 0 0; border-bottom: 1px solid var(--hair); }
 .facts dt { font: 500 16px/1.45 var(--head); color: var(--quiet); padding: 10px 0; border-top: 1px solid var(--hair); }
 .facts dd { margin: 0; font-size: 16.5px; line-height: 1.42; padding: 9px 0; border-top: 1px solid var(--hair); }

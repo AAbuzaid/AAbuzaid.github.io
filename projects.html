@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects · Abdullah Abu Zaid</title>
-<meta name="description" content="Projects by Abdullah Abu Zaid: research on wireless networks for aircraft, machine learning and software projects, and earlier work.">
+<meta name="description" content="Projects by Abdullah Abu Zaid: research on wireless networks for aircraft, machine learning and software projects, Georgia Tech course projects, and earlier work.">
 <meta name="author" content="Abdullah Abu Zaid">
 <link rel="canonical" href="https://aabuzaid.github.io/projects.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=14">
+<link rel="stylesheet" href="assets/site.css?v=15">
 </head>
 <body>
 
@@ -175,13 +175,75 @@
       </div>
     </article>
 
+  </section>
+
+  <section class="group" aria-labelledby="course-projects">
+    <h2 id="course-projects">Georgia Tech course projects</h2>
+    <p class="h2-note">From the online MS in Computer Science, 2020 to 2024. The code and reports are not posted, as the program&rsquo;s honor code asks.</p>
+
+    <article class="entry project-full" id="tweet-sentiment">
+      <p class="when">Summer 2024</p>
+      <div>
+        <h3>Tweet sentiment analysis with four deep learning models</h3>
+        <p class="org">Deep Learning (CS 7643), team of four. Python, PyTorch, Hugging Face Transformers.</p>
+        <p>Four models compared on telling positive tweets from negative ones, on 100,000 tweets from the Sentiment140 dataset, each built by one student: a prompted Llama 3 baseline, a fine-tuned BERT, a convolutional network, and my bidirectional recurrent network with attention. BERT was the most accurate, at 84% on the test tweets.</p>
+        <p class="go"><a href="tweet-sentiment.html">Full write-up</a></p>
+      </div>
+    </article>
+
     <article class="entry project-full" id="house-numbers">
-      <p class="when">PyTorch</p>
+      <p class="when">Spring 2024</p>
       <div>
         <h3>House number recognition with neural networks</h3>
-        <p class="org">Computer Vision course project, Georgia Tech, spring 2024. Python, PyTorch, OpenCV, SVHN dataset.</p>
+        <p class="org">Computer Vision (CS 6476). Python, PyTorch, OpenCV, SVHN dataset.</p>
         <p>A system that finds the digits in photos of house numbers and reads them, across varied backgrounds, sizes, fonts, and angles. A sliding window and a detector network find the digits, and a second network, trained on the SVHN dataset, reads them. For the reader I compared a small network trained from scratch with a pre-trained VGG16.</p>
         <p class="go"><a href="house-numbers.html">Full write-up</a></p>
+      </div>
+    </article>
+
+    <article class="entry project-full" id="ml-studies">
+      <p class="when">Fall 2023</p>
+      <div>
+        <h3>Comparing machine learning algorithms</h3>
+        <p class="org">Machine Learning (CS 7641). Python, scikit-learn, mlrose, Gymnasium.</p>
+        <p>Four studies, each with my own experiments and analysis: supervised learning on medical and handwriting data, randomized optimization, clustering and dimensionality reduction, and reinforcement learning on Blackjack and a grid world.</p>
+        <p class="go"><a href="machine-learning.html">Full write-up</a></p>
+      </div>
+    </article>
+
+    <article class="entry project-full" id="ml-trading">
+      <p class="when">Summer 2022</p>
+      <div>
+        <h3>Machine learning for stock trading</h3>
+        <p class="org">Machine Learning for Trading (CS 7646). Python, NumPy, pandas.</p>
+        <p>Decision-tree and random-tree learners with bagging, a market simulator that charges commissions and market impact, technical indicators, and a Q-learning agent that trades a stock from those indicators. On JPMorgan stock the agent beat both a hand-built strategy and buying and holding over 2008 and 2009, the years it learned from, but lost money over 2010 and 2011, a clear case of overfitting.</p>
+      </div>
+    </article>
+
+    <article class="entry project-full" id="hpc">
+      <p class="when">Fall 2021</p>
+      <div>
+        <h3>Parallel algorithms on a computing cluster</h3>
+        <p class="org">High-Performance Computing (CSE 6220). C, OpenMP, CUDA, MPI.</p>
+        <p>Parallel list ranking with OpenMP on multicore processors and with CUDA on GPUs; MPI&rsquo;s collective operations (reduce, scatter, gather, all-gather, and two kinds of broadcast) rebuilt with tree and bucket algorithms; and a distributed sample sort in the style of the TeraSort benchmark. All of it ran on Georgia Tech&rsquo;s PACE cluster.</p>
+      </div>
+    </article>
+
+    <article class="entry project-full" id="robotics">
+      <p class="when">Spring 2021</p>
+      <div>
+        <h3>Estimation, planning, and control for robots</h3>
+        <p class="org">AI for Robotics (CS 7638). Python.</p>
+        <p>Five projects: a Kalman filter that tracks falling meteorites so a laser turret can hit them; a particle filter that locates a glider over Mars from its radar altimeter and barometer alone, then steers it to a target; PID controllers for a rocket&rsquo;s turbopump and thrust; A* search and dynamic programming that plan a warehouse robot&rsquo;s deliveries; and GraphSLAM, which maps landmarks while tracking the robot&rsquo;s own position, for a robot sent to collect gems.</p>
+      </div>
+    </article>
+
+    <article class="entry project-full" id="networks">
+      <p class="when">Fall 2020</p>
+      <div>
+        <h3>Network protocols and experiments</h3>
+        <p class="org">Computer Networks (CS 6250). Python, Mininet, Pyretic, POX.</p>
+        <p>The spanning tree protocol and distance-vector routing, implemented as distributed algorithms; a reproduction of Google&rsquo;s TCP Fast Open result, in which pages loaded much faster at round-trip times of 100 and 200 ms but barely faster at 20 ms; measurements of bufferbloat under TCP Reno and CUBIC; a firewall on a software-defined network; and a simulated BGP hijacking attack. The experiments ran in Mininet, which emulates a whole network on one computer.</p>
       </div>
     </article>
   </section>
