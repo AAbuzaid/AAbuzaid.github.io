@@ -86,7 +86,7 @@ blockquote { margin: 12px 0 3px; font: italic 400 19.5px/1.32 var(--body); color
 .awards a:focus-visible { outline-color: var(--aw-title); }
 
 /* The record on the left */
-.record section { padding: 26px 0 30px; border-top: 1px solid var(--rule); }
+.record section { padding: 30px 0 36px; border-top: 1px solid var(--rule); }
 .record h2 { margin-bottom: 14px; }
 .h2-note { font-size: 15.5px; line-height: 1.4; color: var(--quiet); margin: -8px 0 16px; }
 
@@ -306,8 +306,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .entry h4 { font: 600 23px/1.16 var(--head); color: var(--ink); margin: 0; }
 
 /* Projects on the home page come in groups, and each project lists the papers it led to. */
-.record h3.subhead { font: 600 21px/1.2 var(--head); color: var(--ink); margin: 18px 0 10px; padding-top: 16px; border-top: 1px solid var(--hair); }
-.record .sec-head + .subhead { margin-top: 0; padding-top: 0; border-top: 0; }
+.record h3.subhead { font: 600 21px/1.2 var(--head); color: var(--ink); margin: 28px 0 10px; }
+.record .sec-head + .subhead { margin-top: 0; }
 .subhead + .entry { border-top: 0; padding-top: 0; }
 .cites { list-style: none; margin: 8px 0 0; padding: 0; }
 .cites li { font-size: 15.5px; line-height: 1.4; color: var(--quiet); }
@@ -316,7 +316,26 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .page.projects .group { max-width: 1180px; }
 .project.entry { grid-template-columns: 118px minmax(0, 1fr) 180px; padding: 14px 0; }
 .project .thumb { align-self: start; width: 100%; height: auto; margin-top: 3px; border: 1px solid var(--hair); }
-.record .credit { font-size: 15px; line-height: 1.4; color: var(--quiet); margin-top: 10px; }
+.record .credit { font-size: 15px; line-height: 1.4; color: var(--quiet); margin-top: 18px; }
+
+/* The smaller project groups on the home page: one line per project, the title only. */
+.titles { list-style: none; margin: 0; padding: 0; }
+.titles li { display: grid; grid-template-columns: 118px minmax(0, 1fr); column-gap: 20px; align-items: baseline; padding: 3px 0; }
+.titles .when { font: 500 16px/1.4 var(--head); color: var(--quiet); }
+.titles p:not(.when) { font: 500 19px/1.3 var(--head); }
+.titles a { color: var(--ink); text-decoration: none; background: linear-gradient(var(--hair), var(--hair)) 0 100% / 100% 1px no-repeat; }
+.titles a:hover { color: var(--magenta); }
+
+/* On the home page, space separates the entries instead of rules, so the overview reads more quietly.
+   The topic pages keep their rules between entries. */
+.record .entry { border-top: 0; padding: 0; }
+.record .entry + .entry { margin-top: 20px; }
+.record .project + .project { margin-top: 24px; }
+.record .pubs > li { border-bottom: 0; padding-bottom: 0; margin-bottom: 18px; }
+@media (min-width: 761px) {
+  /* A project without a figure lets its text run on into the figure's column. */
+  .project.entry > div:last-child { grid-column: 2 / -1; }
+}
 
 /* Institution logos beside Experience and Education entries, in a column of their own.
    An entry without a logo keeps its text in line with the others. */
@@ -381,7 +400,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 @media (max-width: 560px) {
   .pubs h2 { font-size: 22px; }
-  .news li, .project.entry { grid-template-columns: minmax(0, 1fr); }
+  .news li, .project.entry, .titles li { grid-template-columns: minmax(0, 1fr); }
   .project .thumb { grid-column: 1; }
   /* The dates go above, and the logo sits beside the heading. */
   .with-logos .entry { grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; }
